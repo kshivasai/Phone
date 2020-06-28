@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EnterUser</title>
+</head>
+<body>
+    <div>
+        <form method="post" action="@Url.Action("Submit", "User")">
+            Name :<input name="Name" type="text" /><br /><br />
+            Address_line_1 :<input name="Address_line_1" type="text" /><br /><br />
+            Address_line_2 :<input name="Address_line_2" type="text" /><br /><br />
+            City :<input name="City" type="text" /><br /><br />
+            Pincode :<input name="pincode" type="text" /><br /><br />
+            Phonenumber :<input name="Phonenumber" type="text" /><br /><br />
+            <input Id="Submit" type="submit" value="submit"/>
+            <input type="button" value="Cancle" onclick="location.href='@Url.Action("Submit", "User")'"/>
+        </form>
+    </div>
+</body>
+</html>

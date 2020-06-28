@@ -1,0 +1,26 @@
+﻿@model Phone.Models.UserData
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Customer</title>
+</head>
+<body>
+    <h3>Your data is saved</h3>
+    <div id="Data">
+        Name : @Model.Name <br />
+        Address_line_1 : @Model.Address_line_1 <br />
+        Address_line_2 : @Model.Address_line_2 <br />
+        City : @Model.City <br />
+        Pincode :@Model.Pincode <br />
+        Phonenumber : @Model.Phonenumber
+    </div>
+    <input type="button" value="GotoDashboard" onclick="location.href='@Url.Action("Dashboard", "User")'" />
+</body>
+</html>
