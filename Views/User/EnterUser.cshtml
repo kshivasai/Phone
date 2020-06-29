@@ -1,5 +1,7 @@
-﻿
+﻿@*@model Phone.Models.UserData*@
+@model IEnumerable<Phone.Models.UserDataModel>
 @{
+
     Layout = null;
 }
 
@@ -9,19 +11,38 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>EnterUser</title>
+    @*<script>
+        function Save() {
+            document.getElementById('Name').innerHTML = document.Phonebook.Name.value;
+            document.getElementById('Address_line_1').innerHTML = document.Phonebook.Address_line_1.value;
+            document.getElementById('Address_line_2').innerHTML = document.Phonebook.Address_line_2.value;
+            document.getElementById('City').innerHTML = document.Phonebook.City.value;
+            document.getElementById('pincode').innerHTML = document.Phonebook.pincode.value;
+            document.getElementById('Phonenumber').innerHTML = document.Phonebook.Phonenumber.value;
+        }
+    </script>*@
 </head>
 <body>
     <div>
-        <form method="post" action="@Url.Action("Submit", "User")">
+        <form name="Phonebook" action="Submit" method="post">
             Name :<input name="Name" type="text" /><br /><br />
             Address_line_1 :<input name="Address_line_1" type="text" /><br /><br />
             Address_line_2 :<input name="Address_line_2" type="text" /><br /><br />
             City :<input name="City" type="text" /><br /><br />
             Pincode :<input name="pincode" type="text" /><br /><br />
             Phonenumber :<input name="Phonenumber" type="text" /><br /><br />
-            <input Id="Submit" type="submit" value="submit"/>
-            <input type="button" value="Cancle" onclick="location.href='@Url.Action("Submit", "User")'"/>
+            <input Id="Submit" type="submit" value="submit" />
+            <input type="button" value="GotoHome" onclick="location.href='@Url.Action("Dashboard", "User")'" />
         </form>
+        <br />
+        <div>
+            <p id="Name"></p>
+            <p id="Address_line_1"></p>
+            <p id="Address_line_2"></p>
+            <p id="City"></p>
+            <p id="pincode"></p>
+            <p id="Phonenumber"></p>
+        </div>
     </div>
 </body>
 </html>

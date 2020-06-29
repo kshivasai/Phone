@@ -1,17 +1,20 @@
-﻿@model Phone.Models.UserData
+﻿@model Phone.Models.UserDataModel
 @{
     ViewBag.Title = "Submit";
 }
 
-<h2>Submit</h2>
+<h2>Your data is saved</h2>
 
 <div>
-        Name : @Model.Name <br /><br />
-        Address Line 1: @Model.Address_line_1 <br /><br />
-        Address Line 2: @Model.Address_line_2 <br /><br />
-        City : @Model.City <br /><br />
-        Pincode : @Model.Pincode <br /><br />
-        Phone number : @Model.Phonenumber <br /><br />
+    Name : @Model.Name <br /><br />
+    Address Line 1: @Model.Address_line_1 <br /><br />
+    Address Line 2: @Model.Address_line_2 <br /><br />
+    City : @Model.City <br /><br />
+    Pincode : @Model.Pincode <br /><br />
+    Phone number : @Model.Phonenumber <br /><br />
+    <input type="button" value="GotoHome" onclick="location.href='@Url.Action("Dashboard", "User")'" />
+
+    @*<input type="button" value="AddNewData" onclick="location.href='@Url.Action("Enter","User")'" />*@
 </div>
 
  

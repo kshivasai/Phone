@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Phone.Models
 {
-    public class UserData
+    public class UserDataModel
     {
        
         public string Name { get; set; }
