@@ -1,5 +1,4 @@
-﻿@*@model Phone.Models.UserData*@
-@model IEnumerable<Phone.Models.UserDataModel>
+﻿@model IEnumerable<Phone.Models.UserDataModel>
 @{
 
     Layout = null;
@@ -11,38 +10,72 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>EnterUser</title>
-    @*<script>
-        function Save() {
-            document.getElementById('Name').innerHTML = document.Phonebook.Name.value;
-            document.getElementById('Address_line_1').innerHTML = document.Phonebook.Address_line_1.value;
-            document.getElementById('Address_line_2').innerHTML = document.Phonebook.Address_line_2.value;
-            document.getElementById('City').innerHTML = document.Phonebook.City.value;
-            document.getElementById('pincode').innerHTML = document.Phonebook.pincode.value;
-            document.getElementById('Phonenumber').innerHTML = document.Phonebook.Phonenumber.value;
+    <script>
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+        var list4 = [];
+        var list5 = [];
+        var list6 = [];
+
+        var n = 1;
+        var x = 0;
+        function AddRow() {
+
+            var AddRown = document.getElementById('table');
+            var NewRow = AddRown.insertRow(n);
+            list1[x] = document.Phonebook.Name.value;
+            list2[x] = document.Phonebook.Address_line_1.value;
+            list3[x] = document.Phonebook.Address_line_2.value;
+            list4[x] = document.Phonebook.City.value;
+            list5[x] = document.Phonebook.pincode.value;
+            list6[x] = document.Phonebook.Phonenumber.value;
+
+            var cel1 = NewRow.insertCell(0);
+            var cel2 = NewRow.insertCell(1);
+            var cel3 = NewRow.insertCell(2);
+            var cel4 = NewRow.insertCell(3);
+            var cel5 = NewRow.insertCell(4);
+            var cel6 = NewRow.insertCell(5);
+
+            cel1.innerHTML = list1[x];
+            cel2.innerHTML = list2[x];
+            cel3.innerHTML = list3[x];
+            cel4.innerHTML = list4[x];
+            cel5.innerHTML = list5[x];
+            cel6.innerHTML = list6[x];
+
+            n++;
+            x++;
         }
-    </script>*@
+    </script>
 </head>
 <body>
     <div>
-        <form name="Phonebook" action="Submit" method="post">
-            Name :<input name="Name" type="text" /><br /><br />
-            Address_line_1 :<input name="Address_line_1" type="text" /><br /><br />
-            Address_line_2 :<input name="Address_line_2" type="text" /><br /><br />
-            City :<input name="City" type="text" /><br /><br />
-            Pincode :<input name="pincode" type="text" /><br /><br />
-            Phonenumber :<input name="Phonenumber" type="text" /><br /><br />
+        <form name="Phonebook" action="submit" method ="post">
+            Name :<input id="Name" name="Name" type="text" /><br /><br />
+            Address_line_1 :<input id="Address_line_1" name="Address_line_1" type="text" /><br /><br />
+            Address_line_2 :<input id=" Address_line_2" name="Address_line_2" type="text" /><br /><br />
+            City :<input name="City" id="City" type="text" /><br /><br />
+            Pincode :<input name="pincode" id="pincode" type="text" /><br /><br />
+            Phonenumber :<input name="Phonenumber" id="Phonenumber" type="text" /><br /><br />
             <input Id="Submit" type="submit" value="submit" />
+            <input id="Add" type="button" value=" Add" onclick="AddRow()" />
+            <input type="reset" id="reset" />
             <input type="button" value="GotoHome" onclick="location.href='@Url.Action("Dashboard", "User")'" />
+            <div class="container">
+                <table id="table" border="1">
+                    <tr>
+                        <th>Name</th>
+                        <th>Address_line_1</th>
+                        <th>Address_line_2</th>
+                        <th>City</th>
+                        <th>Pincode</th>
+                        <th>Phonenumber</th>
+                    </tr>
+                </table>
+            </div>
         </form>
-        <br />
-        <div>
-            <p id="Name"></p>
-            <p id="Address_line_1"></p>
-            <p id="Address_line_2"></p>
-            <p id="City"></p>
-            <p id="pincode"></p>
-            <p id="Phonenumber"></p>
-        </div>
     </div>
 </body>
 </html>
