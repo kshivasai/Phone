@@ -13,20 +13,17 @@ namespace Phone.Controllers
     public class UserController : Controller
     {
         static List<UserDataModel> PhoneBook = new List<UserDataModel>();
-
         public ActionResult Dashboard()
         {
             return View();
         }
         public ActionResult Enter()
         {
-       
             return View("EnterUser");
         }   
         public ActionResult Submit(UserDataModel data)
         {
             PhoneBook.Add(data);
-
             return View(data);
         }
       
