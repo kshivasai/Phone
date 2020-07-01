@@ -1,4 +1,8 @@
-﻿@model IEnumerable<Phone.Models.UserDataModel>
+﻿@*@model IEnumerable<Phone.Models.UserDataModel>*@
+@model Phone.Viewmodel.UserViewModel
+    @using Phone.Models
+@using Phone.Models
+
 @{
 
     Layout = null;
@@ -10,9 +14,10 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>EnterUser</title>
-    <script>
+    @*<script>
         var n = 1;
-        function AddRow() {
+        function AddRow()
+        {
 
             var AddRown = document.getElementById('table');
             var NewRow = AddRown.insertRow(n);
@@ -26,22 +31,24 @@
 
             n++;
         }
-    </script>
+   
+    </script>*@
 </head>
 <body>
     <div>
-        <form name="Phonebook" action="submit" method ="post">
+        <form name="Phonebook" action="Save" method ="post">
             Name :<input id="Name" name="Name" type="text" /><br /><br />
             Address_line_1 :<input id="Address_line_1" name="Address_line_1" type="text" /><br /><br />
             Address_line_2 :<input id=" Address_line_2" name="Address_line_2" type="text" /><br /><br />
             City :<input name="City" id="City" type="text" /><br /><br />
             Pincode :<input name="pincode" id="pincode" type="text" /><br /><br />
             Phonenumber :<input name="Phonenumber" id="Phonenumber" type="text" /><br /><br />
-            @*<input Id="Submit" type="submit" value="submit" />*@
-            <input id="Add" type="button" value=" Add" onclick="AddRow()" />
+            <input Id="Submit" type="submit" value="submit" />
+            @*<input id="Add" type="button" value=" Add" onclick="AddRow()" />
             <input type="reset" id="reset" />
+            <input type="button" id="delete" value="delete"/>*@
             <input type="button" value="GotoHome" onclick="location.href='@Url.Action("Dashboard", "User")'" /><br /><br />
-            <div class="container">
+            @*<div class="container">
                 <table id="table" border="1">
                     <tr>
                         <th>Name</th>
@@ -51,8 +58,19 @@
                         <th>Pincode</th>
                         <th>Phonenumber</th>
                     </tr>
+                    @foreach(UserDataModel user in Model.userDataModels)
+                    {
+                <tr>
+                    <td>@user.Name</td>
+                    <td>@user.Address_line_1</td>
+                    <td>@user.Address_line_2</td>
+                    <td>@user.City</td>
+                    <td>@user.Pincode</td>
+                    <td>@user.Phonenumber</td>
+                </tr>
+                    }
                 </table>
-            </div>
+            </div>*@
         </form>
     </div>
 </body>

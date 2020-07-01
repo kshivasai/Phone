@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Runtime.CompilerServices;
 using System.Collections;
 using System.Security.AccessControl;
+using Phone.Viewmodel;
 
 namespace Phone.Controllers
 {
@@ -19,14 +20,21 @@ namespace Phone.Controllers
         }
         public ActionResult Enter()
         {
-            return View("EnterUser");
-        }   
+            UserViewModel userViewModel = new UserViewModel();
+            userViewModel.userDataModel = new UserDataModel();
+            return View("EnterUser",userViewModel);
+        }
         public ActionResult Submit(UserDataModel data)
         {
             PhoneBook.Add(data);
-            return View(data);
+            return View(PhoneBook);
         }
-      
+        public ActionResult Save(UserDataModel obj)
+        {
+            PhoneBook.Add(obj);
+            return View(PhoneBook);
+        }
+
     }
 
 }

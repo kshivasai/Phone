@@ -1,11 +1,39 @@
-﻿@model Phone.Models.UserDataModel
+﻿@model Phone.Viewmodel.UserViewModel
+    @using Phone.Models
+
+
 @{
     ViewBag.Title = "Submit";
 }
 
 <h2>Your data is saved</h2>
 
-<div>
+<div class="container">
+    <table id="table" border="1">
+        <tr>
+            <th>Name</th>
+            <th>Address_line_1</th>
+            <th>Address_line_2</th>
+            <th>City</th>
+            <th>Pincode</th>
+            <th>Phonenumber</th>
+        </tr>
+        @foreach (UserDataModel user in Model.userDataModels)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Address_line_1</td>
+                <td>@user.Address_line_2</td>
+                <td>@user.City</td>
+                <td>@user.Pincode</td>
+                <td>@user.Phonenumber</td>
+            </tr>
+        }
+    </table>
+</div>
+
+
+@*<div>
     Name : @Model.Name <br /><br />
     Address Line 1: @Model.Address_line_1 <br /><br />
     Address Line 2: @Model.Address_line_2 <br /><br />
@@ -15,6 +43,6 @@
     <input type="button" value="GotoHome" onclick="location.href='@Url.Action("Dashboard", "User")'" />
 
     <input type="button" value="AddNewData" onclick="location.href='@Url.Action("Enter","User")'" />
-</div>
+</div>*@
 
  

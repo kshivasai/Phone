@@ -82,4 +82,7 @@ E:\Languages\Asp.net MVC\Phone\obj\Debug\Phone.csproj.CoreCompileInputs.cache
 E:\Languages\Asp.net MVC\Phone\obj\Debug\Phone.csproj.CopyComplete
 E:\Languages\Asp.net MVC\Phone\obj\Debug\Phone.dll
 E:\Languages\Asp.net MVC\Phone\obj\Debug\Phone.pdb
-E:\Languages\Asp.net MVC\Phone\obj\Debug\Phone.csprojAssemblyReference.cache
+E:\Languages\Asp.net MVC\Phone\bin\EntityFramework.dll
+E:\Languages\Asp.net MVC\Phone\bin\EntityFramework.SqlServer.dll
+E:\Languages\Asp.net MVC\Phone\bin\EntityFramework.xml
+E:\Languages\Asp.net MVC\Phone\bin\EntityFramework.SqlServer.xml

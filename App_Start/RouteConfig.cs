@@ -16,7 +16,7 @@ namespace Phone
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "User", action = "Dashboard", id = UrlParameter.Optional }
+                defaults: new { controller = "Contacts", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

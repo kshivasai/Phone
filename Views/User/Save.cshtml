@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Phone.Models.UserDataModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Save</title>
+</head>
+<body>
+    <p>
+        @*@Html.ActionLink("Create New", "Create")*@
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address_line_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address_line_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pincode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phonenumber)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address_line_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address_line_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pincode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phonenumber)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "", new {  id=item.Name  }) |
+                @Html.ActionLink("Details", "", new { id = item.Name }) |
+                @Html.ActionLink("Delete", "", new {  id=item.Name  })
+            </td>
+        </tr>
+    }
+    
+    </table>
+    <input type="button" value="AddUser" onclick="location.href='@Url.Action("Enter","User")'" />
+</body>
+</html>
