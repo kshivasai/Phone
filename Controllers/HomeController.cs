@@ -16,15 +16,5 @@ namespace Phone.Controllers
 
             return View();
         }
-        //public ActionResult Enter()
-        //{
-
-        //    return View("EnterUser");
-        //}
-
-        //public ActionResult Submit(UserDataModel data)
-        //{
-        //    return View(data);
-        //}
     }
 }
