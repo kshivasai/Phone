@@ -39,6 +39,14 @@ namespace Phone.DAL
             modelBuilder.Entity<Contact>()
                 .Property(e => e.Phonenumber)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Contact>()
+                .Property(e => e.Country)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Contact>()
+                .Property(e => e.State)
+                .IsUnicode(false);
         }
     }
 }

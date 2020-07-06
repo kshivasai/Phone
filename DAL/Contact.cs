@@ -28,5 +28,9 @@ namespace Phone.DAL
 
         [StringLength(50)]
         public string Phonenumber { get; set; }
+        [StringLength(50)]
+        public string Country { get; set; }
+        [StringLength(50)]
+        public string State { get; set; }
     }
 }
